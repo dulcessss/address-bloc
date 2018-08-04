@@ -11,8 +11,6 @@ require_relative 'entry'
       @entries = []
     end
 
-  end
-
   def add_entry(name, phone_number, email)
     # #9 we create a variable to store the insertion 'index'
     index = 0
