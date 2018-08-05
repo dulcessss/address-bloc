@@ -7,7 +7,7 @@ class Entry
     @phone_number = phone_number
     @email = email
   end
-  # #7 we create the string we want. The '\n' character is the 'newline' characterl
+  # #7 we create the string we want. The '\n' character is the 'newline' character
   # It prints a newline to the console.
 
   def to_s
