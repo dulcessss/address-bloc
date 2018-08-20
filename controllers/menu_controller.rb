@@ -15,7 +15,8 @@ class MenuController
     puts "2 - Create an entry"
     puts "3 - Search for an entry"
     puts "4 - Import entries from CSV"
-    puts "5 - Exit"
+    puts "5 - View entry n"
+    puts "6 - Exit"
     print "Enter your selection: "
 
     # #3 retrieve user input from the command line using 'gets'.
@@ -42,7 +43,13 @@ class MenuController
         system 'clear'
         read_csv
         main_menu
+
       when 5
+        system 'clear'
+        entry_n_submenu
+        main_menu
+
+      when 6
         puts 'Good-bye!'
 
         # #8 terminate the program using 'exit(0)'. 0 signals the program is exiting without an error.
@@ -59,6 +66,22 @@ class MenuController
   end
 
   # #10 stub the rest of the methods called in main_menu.
+
+
+  def entry_n_submenu
+    print "Entry number to view: "
+    selection = gets.chomp.to_i
+
+    if selection < @address_book.entries.count
+      puts @address_book.entries[selection]
+      puts "Press enter to return to the main menu"
+      gets.chomp
+      system 'clear'
+    else
+      puts "#{selection} is not a valid input"
+      entry_n_submenu
+    end
+  end
 
   def view_all_entries
 
