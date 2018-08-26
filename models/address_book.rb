@@ -50,6 +50,17 @@ file. The result of CSV.parse is an object of type CSV::Table.
       end
     end
 
+    def iterative_search(name)
+      @entries.each do |entry|
+        if entry.name == name
+          return entry
+        end
+      end
+
+      return nil
+      
+    end
+
     def binary_search(name)
       lower = 0
       upper = entries.length - 1
@@ -68,6 +79,6 @@ file. The result of CSV.parse is an object of type CSV::Table.
       end
 
       return nil
-      
+
     end
 end
