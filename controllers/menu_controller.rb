@@ -16,7 +16,8 @@ class MenuController
     puts "3 - Search for an entry"
     puts "4 - Import entries from CSV"
     puts "5 - View entry n"
-    puts "6 - Exit"
+    puts "6 - Detonate all entries"
+    puts "7 - Exit"
     print "Enter your selection: "
 
     # #3 retrieve user input from the command line using 'gets'.
@@ -50,6 +51,12 @@ class MenuController
         main_menu
 
       when 6
+        system 'clear'
+        @address_book.detonate
+        puts "All entries have been deleted"
+        main_menu
+
+      when 7
         puts 'Good-bye!'
 
         # #8 terminate the program using 'exit(0)'. 0 signals the program is exiting without an error.
@@ -238,7 +245,7 @@ class MenuController
         puts entry.to_s
         search_submenu(entry)
       end
-    
+
    end
 
 end

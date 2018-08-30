@@ -156,4 +156,15 @@
         end
       end
 
+      context "#detonate" do
+        it "should delete all entries" do
+          book.add_entry("Oscar Alvarez", "010.012.0123", "oscar@blocmail.com")
+          book.add_entry("Oscar Alvarez", "010.012.0123", "oscar@blocmail.com")
+          book.add_entry("Oscar Alvarez", "010.012.0123", "oscar@blocmail.com")
+
+          book.detonate
+          expect(book.entries.size). to eq 0
+        end
+      end
+
  end

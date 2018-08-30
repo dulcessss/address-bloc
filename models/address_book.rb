@@ -12,6 +12,12 @@ require 'csv'
       @entries = []
     end
 
+    def detonate
+      @entries = []
+
+    end
+
+
   def add_entry(name, phone_number, email)
     # #9 we create a variable to store the insertion 'index'
     index = 0
@@ -58,7 +64,7 @@ file. The result of CSV.parse is an object of type CSV::Table.
       end
 
       return nil
-      
+
     end
 
     def binary_search(name)
